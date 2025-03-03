@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "kew-developer-backend",
+  "version": "0.0.1",
+  "description": "This is the backend for Kew Developer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wikipedia Brown",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.86.1"
+  }
+}
