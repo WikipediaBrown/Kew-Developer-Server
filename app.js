@@ -23,7 +23,7 @@ const featureMessage = "You are a 10x Swift engineer helping a mid-level Swift e
 // This one documents code with ChatGPT.
 app.post('/api/ChatGPT/4o/doc', async (req, res) => {
 
-    const userMessage = req.body.message
+    const userMessage = req.body.message.content
 
     const messages = {
         model: "gpt-4o",
@@ -31,7 +31,10 @@ app.post('/api/ChatGPT/4o/doc', async (req, res) => {
             role: "developer",
             content: documentationMessage
         },
-            userMessage],
+        {
+            role: "developer",
+            content: userMessage
+        }],
         store: true,
     }
 
@@ -43,7 +46,7 @@ app.post('/api/ChatGPT/4o/doc', async (req, res) => {
 // This one creates a new feature with ChatGPT.
 app.post('/api/ChatGPT/4o/dev', async (req, res) => {
 
-    const userMessage = req.body.message
+    const userMessage = req.body.message.content
 
     const messages = {
         model: "gpt-4o",
@@ -51,7 +54,10 @@ app.post('/api/ChatGPT/4o/dev', async (req, res) => {
             role: "developer",
             content: featureMessage
         },
-            userMessage],
+        {
+            role: "developer",
+            content: userMessage
+        }],
         store: true,
     }
 
